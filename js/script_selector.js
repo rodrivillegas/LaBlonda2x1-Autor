@@ -1,13 +1,19 @@
 var animationContainer = document.getElementById("animation-container");
 var content = document.getElementById("content");
+var seleccionadorTragos = document.getElementById("seleccionador_tragos");
 
-// Esperar a que la animación termine y luego ocultarla y mostrar el contenido
+// Ocultar el contenido y los botones de selección de tragos por defecto
+content.style.display = "none";
+seleccionadorTragos.style.display = "none";
+
+// Esperar a que la animación termine y luego mostrar el contenido y los botones de selección de tragos
 animationContainer.addEventListener("animationend", function () {
   animationContainer.style.display = "none";
   content.style.display = "block";
+  seleccionadorTragos.style.display = "block";
 });
 
-// Función para ocultar la animación y mostrar el contenido de los tragos
+// Función para mostrar los Tragos y cargar el script correspondiente
 function mostrarTragos(tipo) {
   document.getElementById("seleccionador_tragos").style.display = "none";
   content.style.display = "block";
@@ -20,48 +26,9 @@ function mostrarTragos(tipo) {
   }
 }
 
-// Función para mostrar los Tragos 2x1
-function mostrarTragos2x1() {
-    document.getElementById('seleccionador_tragos').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-    cargarScript('./js/script2x1.js');
-  }
-  
-  // Función para mostrar los Tragos de Autor
-  function mostrarTragosDeAutor() {
-    document.getElementById('seleccionador_tragos').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-    cargarScript('./js/scriptTragosDeAutor.js');
-  }
-  
-  // Función para cargar un script en el documento
-  function cargarScript(url) {
-    var script = document.createElement('script');
-    script.src = url;
-    document.head.appendChild(script);
-  }
-
-  // script_selector.js
-
-// Función para ocultar la animación y mostrar el contenido de los tragos
-function mostrarTragos(tipo) {
-    document.getElementById('seleccionador_tragos').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-    document.getElementById('animation-container').style.display = 'none';
-  
-    if (tipo === '2x1') {
-      cargarScript('./js/script2x1.js');
-    } else if (tipo === 'TragosDeAutor') {
-      cargarScript('./js/scriptTragosDeAutor.js');
-    }
-  }
-  
-  // Función para cargar un script en el documento
-  function cargarScript(url) {
-    var script = document.createElement('script');
-    script.src = url;
-    document.head.appendChild(script);
-  }
-  
-
-  
+// Función para cargar un script en el documento
+function cargarScript(url) {
+  var script = document.createElement("script");
+  script.src = url;
+  document.head.appendChild(script);
+}

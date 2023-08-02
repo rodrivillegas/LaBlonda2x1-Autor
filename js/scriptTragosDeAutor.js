@@ -14,7 +14,7 @@ firebase.initializeApp(firebaseConfig);
 // Generar el elemento h2
 const nuevoH2 = document.createElement("h2");
 nuevoH2.textContent = "TRAGOS DE AUTOR 🧙🏽‍♂️";
-nuevoH2.classList.add("titulo-promocion");
+nuevoH2.classList.add("titulo-promocion1");
 
 // Obtén una referencia al elemento h1 existente
 const h1Elemento = document.querySelector("h1");

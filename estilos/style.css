@@ -109,7 +109,7 @@ h3.todosOFiltra {
 }
 
 .opcion {
-  width: 45%; /* Ancho del recuadro, puedes ajustar este valor */
+  width:90%; /* Ancho del recuadro, puedes ajustar este valor */
   display: inline-block; /* Mostrar los recuadros en línea */
   vertical-align: top; /* Alinear los recuadros en la parte superior */
   margin-left: auto;
@@ -416,41 +416,27 @@ select.opciones {
   text-align: center;
 }
 
+
+/* Estilo para el contenedor de los botones */
+#seleccionador_tragos {
+  display: flex;
+  flex-direction: column; /* Muestra los botones uno debajo del otro */
+  align-items: center; /* Centra los botones horizontalmente */
+}
+
 /* Estilo para los botones de selección */
 #seleccionador_tragos button {
   font-family: "Helvetica", sans-serif;
   font-size: 2rem;
   color: #fff;
-  background-color: #e91e63; /* Color principal de la fiesta */
+  background-color: #ff9800; /* Color principal de la fiesta */
   border: 2px solid #fff;
-  border-radius: 0.5rem;
-  padding: 1rem 2rem;
+  border-radius: 2rem; /* Mayor valor para que parezcan globos */
+  padding: 2rem 3rem; /* Mayor padding para más espacio */
   margin: 1rem;
-  cursor: pointer;
   text-transform: uppercase;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo para los botones de selección al pasar el cursor */
-#seleccionador_tragos button:hover {
-  background-color: #c2185b; /* Color más oscuro al pasar el cursor */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo para los botones de selección cuando se presionan */
-#seleccionador_tragos button:active {
-  background-color: #880e4f; /* Color aún más oscuro al presionar */
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo para los botones de selección en modo fiesta */
-#seleccionador_tragos button.fiesta {
-  background-color: #ff9800; /* Color de fiesta */
-  color: #fff;
-  border-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  cursor: pointer; /* Cambiar el cursor a una mano cuando pases sobre el botón */
 }
 
 /* Estilo para los botones de selección en modo discoteca */
@@ -463,14 +449,33 @@ select.opciones {
 /* Estilo para el nuevo h2 (título de promoción) */
 .titulo-promocion {
   font-family: "Noto Serif Makasar", serif;
-  font-size: 2.5rem;
-  color: #333; /* Color del texto del título */
-  background-color: #f0f0f0; /* Color de fondo del título */
-  padding: 0.625rem 1.25rem;
-  border-radius: 0.5rem;
-  margin: 1rem auto 2rem;
-  transition: background-color 0.3s ease;
+  font-size: 3.5rem; /* Tamaño más grande para mayor impacto */
+  color: #fff;
+  background-color: #ff9800;
+  padding: 1rem 2rem; /* Mayor padding para más presencia */
+  border-radius: 2rem;
+  margin: 2rem auto; /* Mayor margen para centrar mejor */
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  width: 50%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  width: 70%; /* Mayor ancho para más destaque */
+}
+
+/* Estilo para el nuevo h2 (título de promoción) en modo discoteca */
+.titulo-promocion1 {
+  font-family: "Noto Serif Makasar", serif;
+  font-size: 3.5rem; /* Tamaño más grande para mayor impacto */
+  background-color: #673ab7; /* Color de discoteca */
+  color: #fff;
+  padding: 1rem 2rem; /* Mayor padding para más presencia */
+  border-radius: 2rem;
+  margin: 2rem auto; /* Mayor margen para centrar mejor */
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  width: 70%; /* Mayor ancho para más destaque */
+}
+
+/* Estilo para el efecto de botón presionado */
+#seleccionador_tragos button:active {
+  transform: scale(0.95); /* Disminuir ligeramente el tamaño */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra menos pronunciada */
 }
