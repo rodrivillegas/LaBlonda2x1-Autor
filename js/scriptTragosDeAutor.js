@@ -37,7 +37,7 @@ const productosJSON = `
       "slogan": "Gancia",
       "descripcion": "Rico Gancia con Limón.",
       "precio": 1300,
-      "imagen": "./assets/ganciaConLimon.png"
+      "imagen": "./assets/ganciaLimon.png"
     }
   ]
 }

@@ -256,7 +256,7 @@ function cambiarBoton(checkboxId, labelId, cantidadId, nombre, precio) {
       botonPedido.style.display = "none";
       leyendaElemento.style.display = "block";
       leyendaElemento.textContent =
-        "*En promocíon 2x1 el número de 🍹 debe ser PAR.";
+        "*Para ordenar la promocíon 2x1 la cantidad de 🍹 debe ser PAR";
       leyendaElemento.classList.add("recordaTexto");
 
       // Ocultar el div de datos de usuario
