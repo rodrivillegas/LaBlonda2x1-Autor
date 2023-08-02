@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <link rel="shortcut icon" href="./assets/faviconBlonda.jpeg" />
+    <link rel="stylesheet" type="text/css" href="./estilos/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <title>La Blonda On-line</title>
+  </head>
+  <body>
+    <div id="animation-container">
+      <img id="logo" src="assets/animación2.png" alt="Logo" />
+    </div>
+
+    <h1>
+      "LA BLONDA" <br />
+      Sistema On-line de pedidos
+    </h1>
+    <!-- Selector para elegir el tipo de tragos -->
+    <div id="seleccionador_tragos" style="text-align: center">
+      <div class="categoria" style="text-align: center">
+        <h2 class="fiesta">Selecciona una categoría de bebidas 🍹🍸</h2>
+      </div>
+      <button class="fiesta" onclick="mostrarTragos('2x1')">
+        Promociones 2x1
+      </button>
+      <button class="discoteca" onclick="mostrarTragos('TragosDeAutor')">
+        Tragos de Autor
+      </button>
+    </div>
+
+    <!-- Contenido de los tragos -->
+    <div id="content" style="display: none">
+      <div id="productos-container2x1"></div>
+      <div id="productos-containerTragosDeAutor"></div>
+      <div class="orden" style="text-align: center">
+        <h2 id="tu_orden"></h2>
+        <ul id="orden_lista"></ul>
+        <h2 id="precio_final"></h2>
+        <h2 id="leyenda"></h2>
+        <button id="btnComentarios" onclick="mostrarDesplegable()">
+          ¿Comentarios?
+        </button>
+        <div id="desplegable_comentarios" style="display: none">
+          <textarea
+            id="campo_comentarios"
+            placeholder="Personalizá tu pedido y/o dejanos tus comentarios 😃"
+          ></textarea>
+          <button id="btn_enviar" onclick="guardarComentarios()">
+            Agregar
+          </button>
+          <button id="btn_cerrar" onclick="cerrarDesplegable()">Cerrar</button>
+        </div>
+        <div id="datos_usuario" style="display: none" class="input-wrapper">
+          <input
+            type="text"
+            id="nombre_usuario"
+            placeholder="Nombre"
+            required
+            oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]/g, '');"
+          />
+          <input
+            type="number"
+            id="numero_mesa"
+            placeholder="Mesa N°"
+            required
+          />
+        </div>
+        <button id="boton_pedido" onclick="enviarPedido()">
+          Enviar pedido
+        </button>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/script_selector.js"></script>
+  </body>
+</html>

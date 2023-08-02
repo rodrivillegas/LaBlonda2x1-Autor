@@ -1,0 +1,476 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Makasar&display=swap");
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  padding: 1rem;
+  background-image: url(../assets/fondoBlonda.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 90%;
+}
+
+#logo {
+  width: 50%;
+  max-width: 100%;
+  height: auto;
+}
+
+#animation-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin 6s ease-in-out;
+  opacity: 1;
+  z-index: 9999;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) scale(1.8) rotate(0deg);
+    opacity: 1;
+  }
+  10% {
+    transform: translate(-50%, -50%) scale(2.08) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0) rotate(1080deg);
+    opacity: 0;
+  }
+}
+
+h1 {
+  font-family: "Noto Serif Makasar", serif;
+  font-size: 3.3rem;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 6.25rem;
+  height: 0.1875rem;
+  background-color: #333;
+  margin: 0.625rem auto;
+}
+
+h2 {
+  font-family: "Helvetica", sans-serif;
+  font-size: 2.5rem;
+  color: #555;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h3.todosOFiltra {
+  font-family: "Helvetica", sans-serif;
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+}
+
+.columna {
+  text-align: center;
+}
+
+.input-wrapper {
+  display: inline-block;
+  margin-top: 2rem;
+  margin-left: 2rem;
+
+}
+
+.input-wrapper input {
+  width: 23rem;
+  padding: 0.625rem;
+  border: 0.0625rem solid black;
+  border-radius: 0.25rem;
+  font-size: 3rem;
+  margin-right: 0.625rem;
+  text-align: center;
+}
+
+.input-wrapper input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.opcion {
+  width: 45%; /* Ancho del recuadro, puedes ajustar este valor */
+  display: inline-block; /* Mostrar los recuadros en línea */
+  vertical-align: top; /* Alinear los recuadros en la parte superior */
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  box-sizing: border-box;
+  border: 0.125rem solid #ccc;
+  padding: 1rem;
+  border-radius: 0.3125rem;
+  margin-top: 1rem;
+}
+
+.opciones-categoria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.imagen {
+  flex-shrink: 0;
+  margin: auto;
+  border-radius: 0.5125rem;
+  box-shadow: 0 0.125rem 1.25rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.imagen img {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 0.5125rem;
+}
+
+.imagen:hover img {
+  transform: scale(1.4);
+}
+
+.seleccion input[type="checkbox"] {
+  display: none;
+}
+
+.seleccion label {
+  display: inline-block;
+  padding: 0.3125rem 0.625rem;
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.eliminar-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.3125rem;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo original del botón */
+.label-boton {
+  display: inline-block;
+  padding: 0.3125rem 0.625rem;
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 1;
+  cursor: pointer;
+  justify-content: center;
+  font-size: 3.2rem;
+}
+
+/* Estilo para el modo "Borrar Pedido" */
+.label-boton.boton-borrar {
+  background-color: red;
+}
+
+.desplegable select {
+  width: 25rem;
+  height: 3.5rem;
+  font-size: 2.5rem;
+  border-radius: 0.25rem;
+  border: 0.06rem solid #ccc;
+  padding: 0.3rem;
+  text-align: center;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.entrada-label {
+  font-weight: bold;
+  font-size: 3rem;
+  font-family: "Noto Serif Makasar", serif;
+}
+
+.colorSlogan {
+  color: rgb(250, 171, 2);
+  font-size: 2.8rem;
+}
+
+.formatoDescripcion {
+  font-weight: lighter;
+  font-style: italic;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.precioBox {
+  font-size: 3.5rem;
+}
+
+.cantidadInfo {
+  font-size: 3.5rem;
+}
+
+.estiloCantidad {
+  width: 5.5rem;
+  font-size: 3.5rem;
+  height: 4rem;
+  text-align: center;
+  border: solid 0.2rem black;
+}
+
+#tu_orden {
+  font-size: 3.5rem;
+  margin-bottom: 2.5rem;
+  margin-top: 2rem;
+}
+
+#orden_lista {
+  width: 87%; /* Ancho del recuadro, puedes ajustar este valor */
+  display: flex; /* Mostrar los recuadros en línea */
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en varias filas */
+  justify-content: space-between; /* Distribuir los elementos de manera equitativa en la línea */
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.15rem solid #d3d3d3;
+  border-radius: 0.3rem;
+  padding: 1.5rem;
+}
+
+.categoria-comun {
+  text-align: left;
+  width: calc(100% - 5rem); /* Ancho del elemento, incluyendo margen */
+  margin-bottom: 1rem;
+}
+
+.categoria-comun::after {
+  content: "";
+  display: block;
+  width: 6.25rem;
+  height: 0.1875rem;
+  background-color: #333;
+  margin: 0.625rem auto;
+}
+
+.nombre {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.cantidadDescripcion,
+.precioDescripcion,
+.precioTotalDescripcion {
+  font-size: 3rem;
+  font-style: italic;
+}
+
+#precio_final {
+  font-family: "Helvetica", sans-serif;
+  font-size: 3rem;
+}
+
+#boton_pedido {
+  display: none;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #337ab7;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#boton_pedido:hover {
+  background-color: #286090;
+}
+
+#boton_pedido:disabled:hover {
+  background-color: #cccccc;
+}
+
+.toastify {
+  font-size: 2.2rem;
+  text-align: justify;
+}
+
+.cartelConfirmaPedido .swal2-popup {
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  width: 50rem; /* Ancho del recuadro más grande */
+}
+
+#btnComentarios {
+  display: none; /* Ocultar el botón inicialmente */
+  background-color: #ff9800; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  font-size: 2.5rem; /* Tamaño de fuente del botón */
+  border: none; /* Quitar borde del botón */
+  border-radius: 1rem;
+  cursor: pointer; /* Cambiar el cursor al pasar por encima del botón */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+#btnComentarios.mostrar {
+  display: block; /* Mostrar el botón cuando se activa la clase "mostrar" */
+}
+
+#desplegable_comentarios {
+  margin-top: 0.7rem;
+}
+
+#campo_comentarios {
+  width: 95%;
+  height: 100px;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#btn_enviar,
+#btn_cerrar {
+  background-color: #f44336;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  margin: 0.2rem;
+}
+
+#btn_enviar {
+  background-color: #337ab7;
+}
+
+select.opciones {
+  font-family: "Arial", sans-serif;
+  font-size: 3rem;
+  color: #555;
+  padding: 0.5rem;
+  border: 0.0625rem solid black;
+  border-radius: 0.25rem;
+  width: 45rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.opciones option.disabled {
+  color: #999;
+}
+
+.opciones option.subcategorias {
+  padding-left: 10px;
+  color: #888;
+  font-style: italic;
+  font-size: 3.5rem;
+}
+
+.opciones option {
+  font-size: 2rem;
+}
+
+.recordaTexto {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Estilo para los botones de selección */
+#seleccionador_tragos button {
+  font-family: "Helvetica", sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #e91e63; /* Color principal de la fiesta */
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para los botones de selección al pasar el cursor */
+#seleccionador_tragos button:hover {
+  background-color: #c2185b; /* Color más oscuro al pasar el cursor */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para los botones de selección cuando se presionan */
+#seleccionador_tragos button:active {
+  background-color: #880e4f; /* Color aún más oscuro al presionar */
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para los botones de selección en modo fiesta */
+#seleccionador_tragos button.fiesta {
+  background-color: #ff9800; /* Color de fiesta */
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Estilo para los botones de selección en modo discoteca */
+#seleccionador_tragos button.discoteca {
+  background-color: #673ab7; /* Color de discoteca */
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Estilo para el nuevo h2 (título de promoción) */
+.titulo-promocion {
+  font-family: "Noto Serif Makasar", serif;
+  font-size: 2.5rem;
+  color: #333; /* Color del texto del título */
+  background-color: #f0f0f0; /* Color de fondo del título */
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  margin: 1rem auto 2rem;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 50%;
+}
