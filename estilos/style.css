@@ -258,8 +258,6 @@ h3.todosOFiltra {
   justify-content: space-between; /* Distribuir los elementos de manera equitativa en la línea */
   margin-left: auto;
   margin-right: auto;
-  border: 0.15rem solid #d3d3d3;
-  border-radius: 0.3rem;
   padding: 1.5rem;
 }
 
@@ -272,10 +270,11 @@ h3.todosOFiltra {
 .categoria-comun::after {
   content: "";
   display: block;
-  width: 6.25rem;
+  width: 50rem;
   height: 0.1875rem;
   background-color: #333;
   margin: 0.625rem auto;
+  margin-top: 2rem;
 }
 
 .nombre {
