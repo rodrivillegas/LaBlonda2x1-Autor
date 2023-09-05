@@ -3,7 +3,7 @@
 body {
   font-family: Roboto, Arial, sans-serif;
   padding: 1rem;
-  background-image: url(../assets/fondoBlonda.png);
+  background-image: url(../assets/NonoPrimoFondoGris.png);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -33,11 +33,11 @@ body {
 
 @keyframes spin {
   0% {
-    transform: translate(-50%, -50%) scale(1.8) rotate(0deg);
+    transform: translate(-50%, -50%) scale(1.6) rotate(0deg);
     opacity: 1;
   }
   10% {
-    transform: translate(-50%, -50%) scale(2.2) rotate(0deg);
+    transform: translate(-50%, -50%) scale(1.8) rotate(0deg);
     opacity: 1;
   }
   100% {
@@ -51,7 +51,6 @@ h1 {
   font-size: 3.3rem;
   color: #333;
   text-align: center;
-  text-transform: uppercase;
   margin-top: 2rem;
 }
 
@@ -90,7 +89,6 @@ h3.todosOFiltra {
   display: inline-block;
   margin-top: 2rem;
   margin-left: 2rem;
-
 }
 
 .input-wrapper input {
@@ -109,7 +107,7 @@ h3.todosOFiltra {
 }
 
 .opcion {
-  width:90%; /* Ancho del recuadro, puedes ajustar este valor */
+  width: 49%; /* Ancho del recuadro, puedes ajustar este valor */
   display: inline-block; /* Mostrar los recuadros en línea */
   vertical-align: top; /* Alinear los recuadros en la parte superior */
   margin-left: auto;
@@ -125,32 +123,26 @@ h3.todosOFiltra {
 .opciones-categoria {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
 }
 
 .imagen {
-  flex-shrink: 0;
   margin: auto;
-  border-radius: 0.5125rem;
   box-shadow: 0 0.125rem 1.25rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 80%;
   height: auto;
   object-fit: cover;
   transition: transform 0.3s ease;
   margin-top: 1.5rem;
+  width: 90%;
 }
 
 .imagen img {
-  width: 90%;
-  height: auto;
-  object-fit: cover;
+  width: 100%;
   transition: transform 0.3s ease;
-  border-radius: 0.5125rem;
 }
 
 .imagen:hover img {
-  transform: scale(1.4);
+  transform: scale(1.01);
 }
 
 .seleccion input[type="checkbox"] {
@@ -163,7 +155,6 @@ h3.todosOFiltra {
   background-color: #2196f3;
   color: #fff;
   border-radius: 0.3125rem;
-  cursor: pointer;
   margin-top: 0.5rem;
 }
 
@@ -175,7 +166,7 @@ h3.todosOFiltra {
   background-color: red;
   color: white;
   border: none;
-  cursor: pointer;
+  flex-wrap: wrap;
 }
 
 /* Estilo original del botón */
@@ -187,7 +178,7 @@ h3.todosOFiltra {
   border-radius: 1;
   cursor: pointer;
   justify-content: center;
-  font-size: 3.2rem;
+  font-size: 2.5rem;
 }
 
 /* Estilo para el modo "Borrar Pedido" */
@@ -206,35 +197,40 @@ h3.todosOFiltra {
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
 }
+.entrada-info {
+  justify-content: start;
+}
 
 .entrada-label {
   font-weight: bold;
   font-size: 3rem;
   font-family: "Noto Serif Makasar", serif;
+  margin-bottom: 1rem;
 }
 
 .colorSlogan {
   color: rgb(250, 171, 2);
-  font-size: 2.8rem;
+  font-size: 2rem;
 }
 
 .formatoDescripcion {
   font-weight: lighter;
   font-style: italic;
-  width: 75%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
+  font-size: 2rem;
 }
 
 .precioBox {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .cantidadInfo {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .estiloCantidad {
@@ -312,14 +308,6 @@ h3.todosOFiltra {
   margin-right: auto;
 }
 
-#boton_pedido:hover {
-  background-color: #286090;
-}
-
-#boton_pedido:disabled:hover {
-  background-color: #cccccc;
-}
-
 .toastify {
   font-size: 2.2rem;
   text-align: justify;
@@ -328,21 +316,6 @@ h3.todosOFiltra {
 .cartelConfirmaPedido .swal2-popup {
   font-size: 2.5rem; /* Tamaño de fuente más grande */
   width: 50rem; /* Ancho del recuadro más grande */
-}
-
-#btnComentarios {
-  display: none; /* Ocultar el botón inicialmente */
-  background-color: #ff9800; /* Color de fondo del botón */
-  color: white; /* Color del texto del botón */
-  padding: 10px 20px; /* Espaciado interno del botón */
-  font-size: 2.5rem; /* Tamaño de fuente del botón */
-  border: none; /* Quitar borde del botón */
-  border-radius: 1rem;
-  cursor: pointer; /* Cambiar el cursor al pasar por encima del botón */
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.8rem;
-  margin-bottom: 2rem;
 }
 
 #btnComentarios.mostrar {
@@ -372,10 +345,10 @@ h3.todosOFiltra {
   font-size: 2rem;
   border: none;
   border-radius: 0.5rem;
-  cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
   margin: 0.2rem;
 }
 
@@ -411,15 +384,14 @@ select.opciones {
 }
 
 .recordaTexto {
-  font-size: 2rem;
+  font-size: 1.75rem;
   text-align: center;
 }
-
 
 /* Estilo para el contenedor de los botones */
 #seleccionador_tragos {
   display: flex;
-  flex-direction: column; /* Muestra los botones uno debajo del otro */
+  flex-direction: row; /* Muestra los botones uno debajo del otro */
   align-items: center; /* Centra los botones horizontalmente */
 }
 
@@ -433,9 +405,23 @@ select.opciones {
   border-radius: 2rem; /* Mayor valor para que parezcan globos */
   padding: 2rem 3rem; /* Mayor padding para más espacio */
   margin: 1rem;
-  text-transform: uppercase;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-  cursor: pointer; /* Cambiar el cursor a una mano cuando pases sobre el botón */
+  margin-left: auto;
+  margin-right: auto;
+  width: 25rem; /* Ancho del botón */
+  height: 6rem; /* Alto del botón */
+}
+
+#seleccionador_tragos button.fiesta2 {
+  background-color: #0067ff; /* Color de discoteca */
+  color: #fff;
+  border-color: #fff;
+}
+
+#seleccionador_tragos button.fiesta3 {
+  background-color: #00bcd4; /* Color de discoteca */
+  color: #fff;
+  border-color: #fff;
 }
 
 /* Estilo para los botones de selección en modo discoteca */
@@ -443,6 +429,44 @@ select.opciones {
   background-color: #673ab7; /* Color de discoteca */
   color: #fff;
   border-color: #fff;
+}
+
+/* Estilo para los botones de selección en modo happyHour */
+#seleccionador_tragos button.happyHour {
+  background-color: #00bf00; /* Color verde llamativo */
+  color: #fff;
+  font-family: "Noto Serif Makasar", serif;
+  font-size: 2rem; /* Tamaño de fuente reducido */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+  width: 18rem; /* Ancho del botón */
+  height: 18rem; /* Alto del botón */
+  line-height: 1.2;
+  border-radius: 400rem; /* Mayor valor para que parezcan globos */
+  font-weight: 600;
+  align-items: center; /* Centra los botones horizontalmente */
+  margin-top: 5rem;
+}
+
+#seleccionador_tragos button.tutorial {
+  background-color: #8e8e8e; /* Color de discoteca */
+  color: #fff;
+  border-color: #fff;
+  width: 25rem; /* Ancho del botón */
+  height: 5.5rem; /* Alto del botón */
+  border-radius: 2rem; /* Mayor valor para que parezcan globos */
+  margin-top: 8rem;
+  display: flex;
+  font-weight: 500;
+}
+
+.resize-textTutorial {
+  font-size: 2.5rem;
+  margin-left: 3.5rem;
+  margin-top: -0.7rem;
+}
+
+.resize-text {
+  font-size: 2.4rem; /* Tamaño de fuente de 2x1 */
 }
 
 /* Estilo para el nuevo h2 (título de promoción) */
@@ -473,8 +497,75 @@ select.opciones {
   width: 70%; /* Mayor ancho para más destaque */
 }
 
-/* Estilo para el efecto de botón presionado */
-#seleccionador_tragos button:active {
-  transform: scale(0.95); /* Disminuir ligeramente el tamaño */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra menos pronunciada */
+#btnComentarios {
+  display: none; /* Ocultar el botón inicialmente */
+  background-color: #ff9800; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 1rem 2rem; /* Ajustar el padding para reducir el tamaño */
+  font-size: 2.2rem; /* Tamaño de fuente del botón */
+  border: 2px solid #fff;
+  border-radius: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.8rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  width: fit-content; /* Hacer que el ancho se ajuste al contenido */
+}
+
+#boton_pedido {
+  font-family: "Helvetica", sans-serif;
+  display: none;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem; /* Ajustar el padding para reducir el tamaño */
+  font-size: 2rem;
+  font-weight: bold;
+  color: white; /* Color del texto del botón */
+  background-color: #337ab7;
+  border-radius: 0.7rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  width: fit-content; /* Hacer que el ancho se ajuste al contenido */
+}
+
+/* Estilo para el botón "Home" */
+#homeButton {
+  font-weight: bold;
+  font-family: "Helvetica", sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  background-color: red; /* Color de discoteca */
+  border: 2px solid #fff;
+  border-radius: 0.7rem; /* Mayor valor para que parezcan globos */
+  padding: 1rem 2rem; /* Ajustar el padding para reducir el tamaño */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  width: fit-content; /* Hacer que el ancho se ajuste al contenido */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.promocion-text {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+footer {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 0.6rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 93%;
+  margin-top: 5rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.4rem;
 }

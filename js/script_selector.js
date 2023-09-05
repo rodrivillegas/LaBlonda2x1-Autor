@@ -19,9 +19,28 @@ function mostrarTragos(tipo) {
   content.style.display = "block";
   animationContainer.style.display = "none";
 
-  if (tipo === "2x1") {
-    cargarScript("./js/script2x1.js");
-  } else if (tipo === "TragosDeAutor") {
+  if (tipo === "2x1LaMignon") {
+    cargarScript("./js/script2x1LaMignon.js");
+  }
+  if (tipo === "LaMignon") {
+    cargarScript("./js/scriptLaMignon.js");
+  }
+  if (tipo === "2x1Aperol") {
+    cargarScript("./js/script2x1Aperol.js");
+  } 
+  if (tipo === "2x1Mojito") {
+    cargarScript("./js/script2x1Mojito.js");
+  } 
+  if (tipo === "Aperol") {
+    cargarScript("./js/scriptAperol.js");
+  }
+  if (tipo === "FernetBotella") {
+    cargarScript("./js/scriptFernetBotella.js");
+  }
+  if (tipo === "Tutorial") {
+    cargarScript("./js/scriptTutorial.js");
+  }
+  else if (tipo === "TragosDeAutor") {
     cargarScript("./js/scriptTragosDeAutor.js");
   }
 }

@@ -1,3 +1,35 @@
+// Crear el botón "Home"
+var homeButton = document.createElement("div");
+homeButton.textContent = "REGRESAR 🏡";
+homeButton.id = "homeButton"; // Asignar el ID para aplicar los estilos CSS
+homeButton.classList.add("boton-seleccion"); // Agregar la clase existente para mantener el estilo
+
+// Agregar el evento de click al botón "Home" para que refresque la página
+homeButton.addEventListener("click", function () {
+  // Mostrar el SweetAlert2 con el mensaje de advertencia
+  Swal.fire({
+    title: "¿Seguro quieres volver al menú principal?",
+    text: "Lo ordenado se borrará por completo.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Aceptar",
+    cancelButtonText: "Cancelar",
+    customClass: {
+      container: "cartelConfirmaPedido",
+    },
+  }).then((result) => {
+    // Si el usuario hace clic en "Aceptar" en el SweetAlert2, entonces recargamos la página
+    if (result.isConfirmed) {
+      location.reload();
+    }
+  });
+});
+
+// Agregar el botón "Home" al contenedor deseado (por ejemplo, el cuerpo del documento)
+document.body.appendChild(homeButton);
+
 var listaOrden = document.getElementById("orden_lista");
 const firebaseConfig = {
   apiKey: "AIzaSyDYoPl8tTmHs1skLtP264ooxE4xEiWGh2w",
@@ -10,48 +42,15 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-const nuevoH2 = document.createElement("h2");
-nuevoH2.textContent = "PROMOCIONES 2x1 DEL DÍA❕❕";
-nuevoH2.classList.add("titulo-promocion"); // Agregar la clase "titulo-promocion" al nuevo h2
-
-
-// Obtén una referencia al elemento h1 existente
-const h1Elemento = document.querySelector("h1");
-
-// Inserta el nuevo h2 justo después del elemento h1
-h1Elemento.parentNode.insertBefore(nuevoH2, h1Elemento.nextSibling);
-
-
 const productosJSON = `
 {
-  "2x1": [
+  "Aperol": [
     {
-      "nombre": "LA MIGNON LONDON DRY",
-      "slogan": "VAPOUR INFUSED GIN",
-      "descripcion": "Gin clásico seco, acompañado con tónica y cáscara de limón.",
-      "precio": 1500,
-      "imagen": "./assets/mignon1.png"
-    },
-    {
-      "nombre": "LA MIGNON OLD TOM PINK",
-      "slogan": "VAPOUR INFUSED GIN",
-      "descripcion": "Gin dulce macerado con flores de hibiscus, acompañado con tónica y cáscara de naranja o pomelo (elige en 'Comentarios' previo a 'Enviar Pedido').",
-      "precio": 1500,
-      "imagen": "./assets/mignon2.png"
-    },
-    {
-      "nombre": "LA MIGNON MEDITERRANEAN",
-      "slogan": "VAPOUR INFUSED GIN",
-      "descripcion": "Gin aromático y fresco, acompañado con tónica y cáscara de limón.",
-      "precio": 1500,
-      "imagen": "./assets/mignon4.png"
-    },
-    {
-      "nombre": "LA MIGNON MED. BLUE",
-      "slogan": "VAPOUR INFUSED GIN",
-      "descripcion": "Gin dulce macerado con mix de flores, acompañado con tónica y cáscara de limón o pomelo (elige en 'Comentarios' previo a 'Enviar Pedido').",
-      "precio": 1500,
-      "imagen": "./assets/mignon3.png"
+      "nombre": "APEROL SPRITZ",
+      "slogan": "APERITIVO DAL 1919",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": "./assets/aperolSpritz.png"
     }
   ]
 }
@@ -78,7 +77,7 @@ function construirContenidoProductos() {
               <div class="entrada-label formatoDescripcion">${
                 producto.descripcion
               }</div>
-              <div class="precioBox">Precio Regular: $${producto.precio}</div>
+              <div class="precioBox">Precio Individual: $${producto.precio}</div>
               <div class="cantidad">
                 <label for="cantidad_${producto.nombre.replace(
                   /\s/g,
@@ -121,7 +120,6 @@ function construirContenidoProductos() {
                 <img
                   src="${producto.imagen}"
                   alt="Imagen de ${producto.nombre}"
-                  class="imagen-platos"
                 />
               </div>
             </div>
@@ -136,7 +134,9 @@ function construirContenidoProductos() {
   return contenidoProductos;
 }
 
-const productosContainer = document.getElementById("productos-container2x1");
+const productosContainer = document.getElementById(
+  "productos-containerTragosDeAutor"
+);
 productosContainer.innerHTML = construirContenidoProductos();
 
 function cambiarBoton(checkboxId, labelId, cantidadId, nombre, precio) {
@@ -201,8 +201,6 @@ function cambiarBoton(checkboxId, labelId, cantidadId, nombre, precio) {
   // Calcular y actualizar el precio final
   var precioFinal = 0;
   var items = listaOrden.getElementsByClassName("categoria-comun");
-  var sumCantidades = 0; // Variable para sumar las cantidades
-
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
     var precioIndividual = parseFloat(
@@ -213,62 +211,55 @@ function cambiarBoton(checkboxId, labelId, cantidadId, nombre, precio) {
     );
     var precioTotal = precioIndividual * cantidadProducto;
     precioFinal += precioTotal;
-    sumCantidades += cantidadProducto;
   }
 
   var precioFinalElemento = document.getElementById("precio_final");
-  var botonPedido = document.getElementById("boton_pedido");
-  var leyendaElemento = document.getElementById("leyenda");
-
   if (precioFinal > 0) {
-    var valorTotal = precioFinal.toFixed(2);
-    var mitadValorTotal = (precioFinal / 2).toFixed(2);
+    precioFinalElemento.textContent =
+      "(Valor total de la orden: $" + precioFinal.toFixed(2) + ")";
 
-    if (sumCantidades % 2 === 0) {
-      precioFinalElemento.innerHTML =
-        "Valor total de la orden: $" +
-        "<span style='text-decoration: line-through; color: red;'>" +
-        "<span style='color: #555;'>" +
-        valorTotal +
-        "</span>" +
-        "</span>" +
-        "<br>" +
-        "<span style='font-size: 50px;'>" +
-        "Con tu beneficio del 2 ❌ 1" +
-        "<br>" +
-        "Pagas: $" +
-        mitadValorTotal +
-        "❗";
-
-      botonPedido.style.display = "block";
-      leyendaElemento.style.display = "none";
-
-      // Obtener referencia al div de datos de usuario
-      var datosUsuarioElemento = document.getElementById("datos_usuario");
-      datosUsuarioElemento.style.display = "block";
-
-      // Resetear el valor del campo de cantidad solo cuando se presiona "Borrar pedido"
-      if (!agregar && label.textContent === "Borrar pedido") {
-        cantidadElemento.value = "0";
-      }
-    } else {
-      precioFinalElemento.textContent = "";
-      botonPedido.style.display = "none";
-      leyendaElemento.style.display = "block";
-      leyendaElemento.textContent =
-        "*Para ordenar la promocíon 2x1 la cantidad de 🍹 debe ser PAR";
-      leyendaElemento.classList.add("recordaTexto");
-
-      // Ocultar el div de datos de usuario
-      var datosUsuarioElemento = document.getElementById("datos_usuario");
-      datosUsuarioElemento.style.display = "none";
-    }
+    // Mostrar el botón de pedido
+    var botonPedido = document.getElementById("boton_pedido");
+    botonPedido.style.display = "block";
   } else {
     precioFinalElemento.textContent = "";
+
+    // Ocultar el botón de pedido
+    var botonPedido = document.getElementById("boton_pedido");
     botonPedido.style.display = "none";
-    leyendaElemento.style.display = "none";
+  }
+
+  // Calcular y actualizar el precio final
+  var precioFinal = 0;
+  var items = listaOrden.getElementsByClassName("categoria-comun");
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i];
+    var precioIndividual = parseFloat(
+      item.querySelector(".precio").textContent.replace("Precio: $", "")
+    );
+    var cantidadProducto = parseInt(
+      item.querySelector(".cantidad").textContent.replace("Cantidad: ", "")
+    );
+    var precioTotal = precioIndividual * cantidadProducto;
+    precioFinal += precioTotal;
+  }
+
+  var precioFinalElemento = document.getElementById("precio_final");
+  if (precioFinal > 0) {
+    precioFinalElemento.textContent =
+      "(Valor total de la orden: $" + precioFinal.toFixed(2) + ")";
+
+    // Mostrar el botón de pedido
+    var botonPedido = document.getElementById("boton_pedido");
+    botonPedido.style.display = "block";
     var datosUsuarioElemento = document.getElementById("datos_usuario");
-    datosUsuarioElemento.style.display = "none";
+    datosUsuarioElemento.style.display = "block";
+  } else {
+    precioFinalElemento.textContent = "";
+
+    // Ocultar el botón de pedido
+    var botonPedido = document.getElementById("boton_pedido");
+    botonPedido.style.display = "none";
   }
 }
 

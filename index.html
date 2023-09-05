@@ -4,36 +4,74 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-    <link rel="shortcut icon" href="./assets/faviconBlonda.jpeg" />
+    <link rel="shortcut icon" href="./assets/NonoPrimoAnimación.png" />
     <link rel="stylesheet" type="text/css" href="./estilos/style.css" />
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
-    <title>La Blonda On-line</title>
+    <title>Nono Primo On-line</title>
   </head>
   <body>
     <div id="animation-container">
-      <img id="logo" src="assets/animación2.png" alt="Logo" />
+      <img id="logo" src="assets/NonoPrimoAnimación.png" alt="Logo" />
     </div>
     <div id="seleccionador_tragos" style="text-align: center">
       <h1>
-        "LA BLONDA" <br />
-        Sistema On-line de pedidos
+        "NONO PRIMO" <br />
+        Creadores de buen gusto
       </h1>
       <div class="categoria" style="text-align: center">
-        <h2 class="fiesta">Selecciona una categoría de bebidas 🍹🍸</h2>
+        <h2 class="fiesta">Realiza tu pedido On-line 📝</h2>
       </div>
-      <button class="fiesta" onclick="mostrarTragos('2x1')">
-        Promociones 2x1
+
+      <button class="fiesta" onclick="mostrarTragos('LaMignon')">
+        CAFETERIA
+      </button>
+      <button class="fiesta2" onclick="mostrarTragos('Aperol')">
+        BEBIDAS
+      </button>
+      <button class="fiesta3" onclick="mostrarTragos('FernetBotella')">
+        COMIDA
       </button>
       <button class="discoteca" onclick="mostrarTragos('TragosDeAutor')">
-        Tragos de Autor
+        POSTRES
+      </button>
+      <button
+        class="happyHour"
+        id="btnMignon"
+        onclick="mostrarTragos('2x1LaMignon')"
+      >
+        <span class="resize-text">" JUEVES "</span> <br />
+        DE <br />
+        PROMOS
+      </button>
+      <!-- <button
+        class="happyHour"
+        id="btnMojito"
+        onclick="mostrarTragos('2x1Mojito')"
+      >
+        <span class="resize-text">" 2x1 "</span> <br />
+        MOJITO
+      </button>
+      <button
+        class="happyHour"
+        id="btnAperol"
+        onclick="mostrarTragos('2x1Aperol')"
+      >
+        <span class="resize-text">" 2x1 "</span> <br />
+        APEROL <br />
+        SPRITZ
+      </button> -->
+      <button
+        class="tutorial"
+        id="imageContainer"
+        onclick="mostrarTragos('Tutorial')"
+      >
+        <span class="resize-textTutorial">TUTORIAL</span>
       </button>
     </div>
-
-    <!-- Contenido de los tragos -->
     <div id="content" style="display: none">
       <div id="productos-container2x1"></div>
       <div id="productos-containerTragosDeAutor"></div>
@@ -75,10 +113,14 @@
         </button>
       </div>
     </div>
-
+     <footer>
+      <p>© 2023  Nono Primo On-line. Todos los derechos reservados.</p>
+      <p>
+        Pedro C. Molina 1 - Almafuerte - Tel (03571) 35-3761.
+      </p>
+    </footer>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script
       type="text/javascript"
@@ -86,5 +128,52 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/script_selector.js"></script>
+    <!-- <script>
+      function actualizarBotonesSegunHora() {
+        const horaActual = new Date();
+
+        const btnMignon = document.getElementById("btnMignon");
+        const btnMojito = document.getElementById("btnMojito");
+        const btnAperol = document.getElementById("btnAperol");
+
+        const horaInicioMignon = new Date(horaActual);
+        horaInicioMignon.setHours(0, 0, 0); // Establecer hora de inicio para Mignon
+
+        const horaFinMignon = new Date(horaActual);
+        horaFinMignon.setHours(6, 0, 0); // Establecer hora de fin para Mignon
+
+        const horaInicioMojito = new Date(horaActual);
+        horaInicioMojito.setHours(0, 0, 0); // Establecer hora de inicio para Mojito
+
+        const horaFinMojito = new Date(horaActual);
+        horaFinMojito.setHours(6, 0, 0); // Establecer hora de fin para Mojito
+
+        const horaInicioAperol = new Date(horaActual);
+        horaInicioAperol.setHours(0, 0, 0); // Establecer hora de inicio para Aperol
+
+        const horaFinAperol = new Date(horaActual);
+        horaFinAperol.setHours(6, 0, 0); // Establecer hora de fin para Aperol
+
+        if (horaActual >= horaInicioMignon && horaActual < horaFinMignon) {
+          btnMignon.style.display = "inline-block";
+        } else {
+          btnMignon.style.display = "none";
+        }
+
+        if (horaActual >= horaInicioMojito && horaActual < horaFinMojito) {
+          btnMojito.style.display = "inline-block";
+        } else {
+          btnMojito.style.display = "none";
+        }
+
+        if (horaActual >= horaInicioAperol && horaActual < horaFinAperol) {
+          btnAperol.style.display = "inline-block";
+        } else {
+          btnAperol.style.display = "none";
+        }
+      }
+      actualizarBotonesSegunHora();
+      setInterval(actualizarBotonesSegunHora, 5000);
+    </script> -->
   </body>
 </html>

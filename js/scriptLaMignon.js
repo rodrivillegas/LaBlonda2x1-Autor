@@ -44,119 +44,35 @@ firebase.initializeApp(firebaseConfig);
 
 const productosJSON = `
 {
-  "TragosDeAutor": [
+  "LaMignon": [
     {
-      "nombre": "GOTAS DE MARACUYÁ",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka maracuyá, jugo de limón, jugo multifruta, dash de licor de durazno y almíbar",
-      "precio": 1300,
-      "imagen": "./assets/gotasMaracuya.png"
+      "nombre": "LA MIGNON OLD TOM PINK",
+      "slogan": "VAPOUR INFUSED GIN",
+      "descripcion": "Dulce macerado con flores de hibiscus, con tónica y cáscara de naranja o pomelo (elige en los comentarios).",
+      "precio": 1800,
+      "imagen": "./assets/mignon2.png"
     },
     {
-      "nombre": "MARACUYÁ TROPICAL",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka maracuyá, licor de amaretto, granadina, cereza y red bull tropical.",
-      "precio": 1300,
-      "imagen": "./assets/maracuyaTropical.png"
+      "nombre": "LA MIGNON MED. BLUE",
+      "slogan": "VAPOUR INFUSED GIN",
+      "descripcion": "Dulce macerado con mix de flores, con tónica y cáscara de limón o pomelo (elige en los comentarios).",
+      "precio": 1800,
+      "imagen": "./assets/mignon3.png"
     },
     {
-      "nombre": "CAIPI FRUTILLA",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka frutilla, pulpa de frutilla, almíbar y limón.",
-      "precio": 1300,
-      "imagen": "./assets/caipiFrutilla.png"
+      "nombre": "LA MIGNON MEDITERRANEAN",
+      "slogan": "VAPOUR INFUSED GIN",
+      "descripcion": "Aromático y fresco, con tónica y cáscara de limón.",
+      "precio": 1800,
+      "imagen": "./assets/mignon4.png"
     },
     {
-      "nombre": "CAIPIRISIMA",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Ron de coco, kiwi, almíbar y limón.",
-      "precio": 1300,
-      "imagen": "./assets/caipirisima.png"
-    },
-    {
-      "nombre": "MALEFICIO",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Smirnoff frutos rojos, aguardiente, mermelada, almíbar y limón.",
-      "precio": 1300,
-      "imagen": "./assets/maleficio.png"
-    },
-    {
-      "nombre": "APPLE GANCIA",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Gancia, jugo de manzana y almíbar.",
-      "precio": 1300,
-      "imagen": "./assets/appleGancia.png"
-    },
-    {
-      "nombre": "SOUR APEROL",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Aperol, gin, clara de huevo, champagne, dash de jugo de naranja y almíbar.",
-      "precio": 1300,
-      "imagen": "./assets/sourAperol.png"
-    },
-    {
-      "nombre": "MUY MUY LEJANO",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka durazno, blue curacao, jugo de naranja y licor de melón.",
-      "precio": 1300,
-      "imagen": "./assets/muyMuyLejano.png"
-    },
-    {
-      "nombre": "ANDRÓMEDA",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Gin, infusión de té, romero, almíbar y tónica.",
-      "precio": 1300,
-      "imagen": "./assets/andromeda.png"
-    },
-    {
-      "nombre": "PIÑA DE LA CASA",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Ron especial de coco, ron blanco y leche de almendras.",
-      "precio": 1300,
-      "imagen": "./assets/piñaDeCasa.png"
-    },
-    {
-      "nombre": "CAIPI MARACUYÁ",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka maracuyá, pulpa de maracuyá, almíbar y limón.",
-      "precio": 1300,
-      "imagen": "./assets/caipiMaracuya.png"
-    },
-    {
-      "nombre": "MALIBÚ SURF BLUE",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Ron de coco, emulsión de crema, licor de chocolate blanco y blue curacao.",
-      "precio": 1300,
-      "imagen": "./assets/malibuSurfBlue.png"
-    },
-    {
-      "nombre": "CHICAS ROJAS",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka frutilla, crema, pulpa de frutilla y ron de coco.",
-      "precio": 1300,
-      "imagen": "./assets/chicasRojas.png"
-    },
-    {
-      "nombre": "GRASSHOPPER",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Licor de menta, licor de chocolate blanco y emulsión de crema.",
-      "precio": 1300,
-      "imagen": "./assets/grasshopper.png"
-    },
-    {
-      "nombre": "CORONA AUSTRALIS",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Gin Heráclito & Macedonio, granadina, orgeat y licor de vainilla.",
-      "precio": 1300,
-      "imagen": "./assets/coronaAustralis.png"
-    },
-    {
-      "nombre": "SANGRE DE CRISTO",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vino malbec, energizante, fruta y almíbar.",
-      "precio": 1300,
-      "imagen": "./assets/sangreCristo.png"
-    }
+      "nombre": "LA MIGNON LONDON DRY",
+      "slogan": "VAPOUR INFUSED GIN",
+      "descripcion": "Clásico seco, con tónica y cáscara de limón.",
+      "precio": 1800,
+      "imagen": "./assets/mignon1.png"
+    }   
   ]
 }
 `;

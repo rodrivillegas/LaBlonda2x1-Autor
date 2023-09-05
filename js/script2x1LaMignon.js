@@ -1,8 +1,8 @@
-// Crear el botón "Home"
 var homeButton = document.createElement("div");
 homeButton.textContent = "REGRESAR 🏡";
 homeButton.id = "homeButton"; // Asignar el ID para aplicar los estilos CSS
 homeButton.classList.add("boton-seleccion"); // Agregar la clase existente para mantener el estilo
+
 
 // Agregar el evento de click al botón "Home" para que refresque la página
 homeButton.addEventListener("click", function () {
@@ -30,7 +30,7 @@ homeButton.addEventListener("click", function () {
 // Agregar el botón "Home" al contenedor deseado (por ejemplo, el cuerpo del documento)
 document.body.appendChild(homeButton);
 
-var listaOrden = document.getElementById("orden_lista");
+var listaOrden = document.getElementById ("orden_lista");
 const firebaseConfig = {
   apiKey: "AIzaSyDYoPl8tTmHs1skLtP264ooxE4xEiWGh2w",
   authDomain: "pedidoslablonda.firebaseapp.com",
@@ -44,119 +44,35 @@ firebase.initializeApp(firebaseConfig);
 
 const productosJSON = `
 {
-  "TragosDeAutor": [
+  "2x1": [
     {
-      "nombre": "GOTAS DE MARACUYÁ",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka maracuyá, jugo de limón, jugo multifruta, dash de licor de durazno y almíbar",
-      "precio": 1300,
-      "imagen": "./assets/gotasMaracuya.png"
+      "nombre": "LA MIGNON OLD TOM PINK",
+      "slogan": "VAPOUR INFUSED GIN",
+      "descripcion": "Dulce macerado con flores de hibiscus, con tónica y cáscara de naranja o pomelo (elige en los comentarios).",
+      "precio": 1800,
+      "imagen": "./assets/mignon2.png"
     },
     {
-      "nombre": "MARACUYÁ TROPICAL",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka maracuyá, licor de amaretto, granadina, cereza y red bull tropical.",
-      "precio": 1300,
-      "imagen": "./assets/maracuyaTropical.png"
+      "nombre": "LA MIGNON MED. BLUE",
+      "slogan": "VAPOUR INFUSED GIN",
+      "descripcion": "Dulce macerado con mix de flores, con tónica y cáscara de limón o pomelo (elige en los comentarios).",
+      "precio": 1800,
+      "imagen": "./assets/mignon3.png"
     },
     {
-      "nombre": "CAIPI FRUTILLA",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka frutilla, pulpa de frutilla, almíbar y limón.",
-      "precio": 1300,
-      "imagen": "./assets/caipiFrutilla.png"
+      "nombre": "LA MIGNON MEDITERRANEAN",
+      "slogan": "VAPOUR INFUSED GIN",
+      "descripcion": "Aromático y fresco, con tónica y cáscara de limón.",
+      "precio": 1800,
+      "imagen": "./assets/mignon4.png"
     },
     {
-      "nombre": "CAIPIRISIMA",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Ron de coco, kiwi, almíbar y limón.",
-      "precio": 1300,
-      "imagen": "./assets/caipirisima.png"
-    },
-    {
-      "nombre": "MALEFICIO",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Smirnoff frutos rojos, aguardiente, mermelada, almíbar y limón.",
-      "precio": 1300,
-      "imagen": "./assets/maleficio.png"
-    },
-    {
-      "nombre": "APPLE GANCIA",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Gancia, jugo de manzana y almíbar.",
-      "precio": 1300,
-      "imagen": "./assets/appleGancia.png"
-    },
-    {
-      "nombre": "SOUR APEROL",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Aperol, gin, clara de huevo, champagne, dash de jugo de naranja y almíbar.",
-      "precio": 1300,
-      "imagen": "./assets/sourAperol.png"
-    },
-    {
-      "nombre": "MUY MUY LEJANO",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka durazno, blue curacao, jugo de naranja y licor de melón.",
-      "precio": 1300,
-      "imagen": "./assets/muyMuyLejano.png"
-    },
-    {
-      "nombre": "ANDRÓMEDA",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Gin, infusión de té, romero, almíbar y tónica.",
-      "precio": 1300,
-      "imagen": "./assets/andromeda.png"
-    },
-    {
-      "nombre": "PIÑA DE LA CASA",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Ron especial de coco, ron blanco y leche de almendras.",
-      "precio": 1300,
-      "imagen": "./assets/piñaDeCasa.png"
-    },
-    {
-      "nombre": "CAIPI MARACUYÁ",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka maracuyá, pulpa de maracuyá, almíbar y limón.",
-      "precio": 1300,
-      "imagen": "./assets/caipiMaracuya.png"
-    },
-    {
-      "nombre": "MALIBÚ SURF BLUE",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Ron de coco, emulsión de crema, licor de chocolate blanco y blue curacao.",
-      "precio": 1300,
-      "imagen": "./assets/malibuSurfBlue.png"
-    },
-    {
-      "nombre": "CHICAS ROJAS",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vodka frutilla, crema, pulpa de frutilla y ron de coco.",
-      "precio": 1300,
-      "imagen": "./assets/chicasRojas.png"
-    },
-    {
-      "nombre": "GRASSHOPPER",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Licor de menta, licor de chocolate blanco y emulsión de crema.",
-      "precio": 1300,
-      "imagen": "./assets/grasshopper.png"
-    },
-    {
-      "nombre": "CORONA AUSTRALIS",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Gin Heráclito & Macedonio, granadina, orgeat y licor de vainilla.",
-      "precio": 1300,
-      "imagen": "./assets/coronaAustralis.png"
-    },
-    {
-      "nombre": "SANGRE DE CRISTO",
-      "slogan": "Maxi Villarreal y Bruno Ismael",
-      "descripcion": "Vino malbec, energizante, fruta y almíbar.",
-      "precio": 1300,
-      "imagen": "./assets/sangreCristo.png"
-    }
+      "nombre": "LA MIGNON LONDON DRY",
+      "slogan": "VAPOUR INFUSED GIN",
+      "descripcion": "Clásico seco, con tónica y cáscara de limón.",
+      "precio": 1800,
+      "imagen": "./assets/mignon1.png"
+    }   
   ]
 }
 `;
@@ -182,7 +98,7 @@ function construirContenidoProductos() {
               <div class="entrada-label formatoDescripcion">${
                 producto.descripcion
               }</div>
-              <div class="precioBox">Precio Individual: $${producto.precio}</div>
+              <div class="precioBox">Precio Regular: $${producto.precio}</div>
               <div class="cantidad">
                 <label for="cantidad_${producto.nombre.replace(
                   /\s/g,
@@ -239,9 +155,7 @@ function construirContenidoProductos() {
   return contenidoProductos;
 }
 
-const productosContainer = document.getElementById(
-  "productos-containerTragosDeAutor"
-);
+const productosContainer = document.getElementById("productos-container2x1");
 productosContainer.innerHTML = construirContenidoProductos();
 
 function cambiarBoton(checkboxId, labelId, cantidadId, nombre, precio) {
@@ -306,6 +220,8 @@ function cambiarBoton(checkboxId, labelId, cantidadId, nombre, precio) {
   // Calcular y actualizar el precio final
   var precioFinal = 0;
   var items = listaOrden.getElementsByClassName("categoria-comun");
+  var sumCantidades = 0; // Variable para sumar las cantidades
+
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
     var precioIndividual = parseFloat(
@@ -316,55 +232,63 @@ function cambiarBoton(checkboxId, labelId, cantidadId, nombre, precio) {
     );
     var precioTotal = precioIndividual * cantidadProducto;
     precioFinal += precioTotal;
+    sumCantidades += cantidadProducto;
   }
 
   var precioFinalElemento = document.getElementById("precio_final");
-  if (precioFinal > 0) {
-    precioFinalElemento.textContent =
-      "(Valor total de la orden: $" + precioFinal.toFixed(2) + ")";
+  var botonPedido = document.getElementById("boton_pedido");
+  var leyendaElemento = document.getElementById("leyenda");
 
-    // Mostrar el botón de pedido
-    var botonPedido = document.getElementById("boton_pedido");
-    botonPedido.style.display = "block";
+  if (precioFinal > 0) {
+    var valorTotal = precioFinal.toFixed(2);
+    var mitadValorTotal = (precioFinal / 2).toFixed(2);
+
+    if (sumCantidades % 2 === 0) {
+      precioFinalElemento.innerHTML =
+        "Valor total de la orden: $" +
+        "<span style='text-decoration: line-through; color: red;'>" +
+        "<span style='color: #555;'>" +
+        valorTotal +
+        "</span>" +
+        "</span>" +
+        "<br>" +
+        "<span style='font-size: 50px;'>" +
+        "Con tu beneficio del 2 ❌ 1" +
+        "<br>" +
+        "Pagas: $" +
+        mitadValorTotal +
+        "❗";
+
+      botonPedido.style.display = "block";
+      leyendaElemento.style.display = "none";
+
+      // Obtener referencia al div de datos de usuario
+      var datosUsuarioElemento = document.getElementById("datos_usuario");
+      datosUsuarioElemento.style.display = "block";
+
+      // Resetear el valor del campo de cantidad solo cuando se presiona "Borrar pedido"
+      if (!agregar && label.textContent === "Borrar pedido") {
+        cantidadElemento.value = "0";
+      }
+    } else {
+      precioFinalElemento.textContent = "";
+      botonPedido.style.display = "none";
+      leyendaElemento.style.display = "block";
+      leyendaElemento.textContent =
+        "*Para ordenar la promocíon 2x1 la cantidad de 🍹 debe ser PAR.";
+      leyendaElemento.classList.add("recordaTexto");
+    
+
+      // Ocultar el div de datos de usuario
+      var datosUsuarioElemento = document.getElementById("datos_usuario");
+      datosUsuarioElemento.style.display = "none";
+    }
   } else {
     precioFinalElemento.textContent = "";
-
-    // Ocultar el botón de pedido
-    var botonPedido = document.getElementById("boton_pedido");
     botonPedido.style.display = "none";
-  }
-
-  // Calcular y actualizar el precio final
-  var precioFinal = 0;
-  var items = listaOrden.getElementsByClassName("categoria-comun");
-  for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-    var precioIndividual = parseFloat(
-      item.querySelector(".precio").textContent.replace("Precio: $", "")
-    );
-    var cantidadProducto = parseInt(
-      item.querySelector(".cantidad").textContent.replace("Cantidad: ", "")
-    );
-    var precioTotal = precioIndividual * cantidadProducto;
-    precioFinal += precioTotal;
-  }
-
-  var precioFinalElemento = document.getElementById("precio_final");
-  if (precioFinal > 0) {
-    precioFinalElemento.textContent =
-      "(Valor total de la orden: $" + precioFinal.toFixed(2) + ")";
-
-    // Mostrar el botón de pedido
-    var botonPedido = document.getElementById("boton_pedido");
-    botonPedido.style.display = "block";
+    leyendaElemento.style.display = "none";
     var datosUsuarioElemento = document.getElementById("datos_usuario");
-    datosUsuarioElemento.style.display = "block";
-  } else {
-    precioFinalElemento.textContent = "";
-
-    // Ocultar el botón de pedido
-    var botonPedido = document.getElementById("boton_pedido");
-    botonPedido.style.display = "none";
+    datosUsuarioElemento.style.display = "none";
   }
 }
 
